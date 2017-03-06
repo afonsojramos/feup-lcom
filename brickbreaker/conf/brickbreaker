@@ -1,0 +1,32 @@
+service brickbreaker
+{
+        system
+                UMAP
+                INT86
+                PRIVCTL
+                READBIOS
+                DEVIO
+                IRQCTL
+                ;
+        ipc
+                SYSTEM
+                rs
+                vm
+                pm
+                vfs
+                ;
+        io
+                40:4 	# Timer
+                60		# KBC
+                64		# KBC
+                70:2	# RTC
+                ;               
+        irq
+                0       # TIMER 0 IRQ
+                1       # KBD IRQ
+                8		# RTC
+                12      # AUX/MOUSE IRQ
+                ;       
+        uid     0               
+                ;	
+};
